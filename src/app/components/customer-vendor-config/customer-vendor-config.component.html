@@ -1,0 +1,32 @@
+<div class="grid grid-rows-1 grid-cols-6 gap-4 bg-transparent">
+  <div class="bg-white/80 rounded-xl text-center py-5 col-span-2 text-2xl grid grid-rows-2 grid-cols-3 gap-2 col-start-2">
+    <div class=" text-center py-5 col-span-3 text-xl"><h2 class="font-bold text-2xl text-[#002D74]">Vendors</h2></div>
+    <div class=" text-center py-5 text-xl"><button (click)="decrementVendors()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">-</button></div>
+    <div class=" text-center py-5 text-xl"><input
+      [(ngModel)]="numVendors"
+      class="p-2 rounded-xl border w-20 text-center"
+      type="text">
+    </div>
+    <div class=" text-center py-5 text-xl"><button (click)="incrementVendors()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">+</button></div>
+<!--    <div class=" text-center py-5 col-start-2 text-xl">-->
+<!--      <button (click)="saveVendors()" class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Save</button></div>-->
+  </div>
+  <div class="bg-white/80 rounded-xl text-center py-5 col-span-2 text-2xl grid grid-rows-2 grid-cols-3 gap-2">
+    <div class=" text-center py-5 col-span-3 text-xl"><h2 class="font-bold text-2xl text-[#002D74]">Customers</h2></div>
+    <div class=" text-center py-5 text-xl"><button (click)="decrementCustomers()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">-</button></div>
+    <div class=" text-center py-5 text-xl"><input
+      [(ngModel)]="numCustomers"
+      class="p-2 rounded-xl border w-20 text-center"
+      type="text">
+    </div>
+    <div class=" text-center py-5 text-xl"><button (click)="incrementCustomers()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">+</button></div>
+<!--    <div class=" text-center py-5 col-start-2 text-xl">-->
+<!--      <button (click)="saveCustomers()" class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Save</button></div>-->
+  </div>
+</div>
+<div class="mx-auto w-fit flex justify-between  gap-3">
+  <button routerLink="/configurationForm" class="ml-10 px-2 w-fit mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Go back</button>
+  <button (click)="saveThreadCounts()" class="px-2 w-fit mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Save Thread Configuration</button>
+  <button routerLink="/ticketCounter" class="mr-10 px-2 w-fit mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Continue</button>
+</div>
+

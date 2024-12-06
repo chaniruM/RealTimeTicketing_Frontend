@@ -1,0 +1,37 @@
+<div class="min-h-screen flex items-center justify-center bg-transparent">
+  <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-4">Purchase Tickets</h2>
+
+    <p class="block text-sm font-medium py-1">Match Name: sdfghjhbn</p>
+    <p class="block text-sm font-medium py-1">Date: sdfghjhbn</p>
+    <p class="block text-sm font-medium py-1">Time: sdfghjhbn</p>
+    <p class="block text-sm font-medium py-1">Location: sdfghjhbn</p>
+    <form (submit)="onSubmit()">
+
+      <!-- Ticket Info -->
+      <div class="mb-4 mt-4">
+        <label for="numberOfTickets" class="block text-sm font-medium">Number of Tickets</label>
+        <input [(ngModel)]="ticket.numberOfTickets" id="numberOfTickets" name="numberOfTickets" class="w-full p-2 border rounded" type="number" required />
+      </div>
+      <div class="mb-4">
+        <label for="purchaserName" class="block text-sm font-medium">Name</label>
+        <input [(ngModel)]="ticket.purchaserName" id="purchaserName" name="purchaserName" class="w-full p-2 border rounded" type="text" required />
+      </div>
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium">Email</label>
+        <input [(ngModel)]="ticket.email" id="email" name="email" class="w-full p-2 border rounded" type="email" required />
+      </div>
+      <div class="mb-4">
+        <label for="contactNumber" class="block text-sm font-medium">Contact Number</label>
+        <input [(ngModel)]="ticket.contactNumber" id="contactNumber" name="contactNumber" class="w-full p-2 border rounded" type="text" required />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+        Purchase
+      </button>
+    </form>
+  </div>
+</div>
+<div class="w-full h-40"></div>
+

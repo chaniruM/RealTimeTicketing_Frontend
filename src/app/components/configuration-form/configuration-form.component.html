@@ -1,0 +1,123 @@
+<!--<div class=" w-full p-5 items-center">-->
+<!--<div class="w-full h-24"></div>-->
+<div class=" w-full p-5 items-center bg-gray-100 bg-opacity-75 flex rounded-2xl max-w-3xl justify-center mx-auto mt-10">
+
+  <!-- form -->
+<!--  <div class="px-2 text-[#002D74]">-->
+  <div class="px-8 md:px-16 text-[#002D74]">
+    <h2 class="font-bold text-2xl">Configuration</h2>
+    <p class="text-xs mt-4 mb-4">Set up multithreading configuration</p>
+
+    <form action="" class="flex flex-col gap-3" #loginForm="ngForm">
+
+      <!-- Total tickets -->
+      <div class="flex items-center gap-4">
+        <label class="w-5/6 text-left" for="totalTickets">Total Tickets:</label>
+        <div class="w-20">
+          <input
+            class="p-2 rounded-xl border w-full"
+            id="totalTickets"
+            type="number"
+            name="totalTickets"
+            placeholder="0"
+            [(ngModel)]="config.totalTickets"
+            required
+            #totalTickets="ngModel"
+          />
+
+        </div>
+        <div *ngIf="(totalTickets.touched || submitted) && !config.totalTickets" class="error text-red-600 text-sm mt-2">
+          This field is required.
+        </div>
+      </div>
+
+      <!-- Ticket Release Rate -->
+      <div class="flex items-center gap-4">
+        <label class="w-5/6 text-left" for="email">Ticket Release Rate:</label>
+        <div class="w-20">
+          <input
+            class="p-2 rounded-xl border w-full"
+            id="email"
+            type="number"
+            name="ticketReleaseRate"
+            placeholder="0"
+            [(ngModel)]="config.ticketReleaseRate"
+            required
+            #ticketReleaseRate="ngModel"
+          />
+
+        </div>
+        <div *ngIf="(ticketReleaseRate.touched || submitted) && !config.ticketReleaseRate" class="error text-red-600 text-sm mt-2">
+          This field is required.
+        </div>
+      </div>
+
+      <!-- Customer Retrieval Rate -->
+      <div class="flex items-center gap-4">
+        <label class="w-5/6 text-left" for="customerRetrievalRate">Customer Retrieval Rate:</label>
+        <div class="w-20">
+          <input
+            class="p-2 rounded-xl border w-full"
+            id="customerRetrievalRate"
+            type="number"
+            name="customerRetrievalRate"
+            placeholder="0"
+            [(ngModel)]="config.customerRetrievalRate"
+            required
+            #customerRetrievalRate="ngModel"
+          />
+
+        </div>
+        <div *ngIf="(customerRetrievalRate.touched || submitted) && !config.customerRetrievalRate" class="error text-red-600 text-sm mt-2">
+          This field is required.
+        </div>
+      </div>
+
+      <!-- Max Ticket Capacity -->
+      <div class="flex items-center gap-4">
+        <label class="w-5/6 text-left" for="maxTicketCapacity">Max Ticket Capacity:</label>
+        <div class="w-20">
+          <input
+            class="p-2 rounded-xl border w-full"
+            id="maxTicketCapacity"
+            type="number"
+            name="maxTicketCapacity"
+            placeholder="0"
+            [(ngModel)]="config.maxTicketCapacity"
+            required
+            #maxTicketCapacity="ngModel"
+          />
+
+        </div>
+        <div *ngIf="(maxTicketCapacity.touched || submitted) && !config.maxTicketCapacity" class="error text-red-600 text-sm mt-2">
+          This field is required.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="border-black">
+        <button
+          class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"
+          (click)="onSubmit()"
+        >
+          Save Configuration
+        </button>
+      </div>
+    </form>
+
+    <div class="mt-3 text-xs flex justify-between items-center text-[#002D74]">
+      <button routerLink="/" class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">Go back</button>
+      <button class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300" (click)="resetForm()">Reset</button>
+    </div>
+<!--    <button-->
+<!--      routerLink="/customerDetails"-->
+<!--      class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"-->
+<!--    >-->
+    <button
+      routerLink="/customerVendorConfig"
+      class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"
+    >
+      Set customer and vendor threads
+    </button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="bg-blue-500 p-4 mt-24">
+
+<h1 class="text-3xl text-white font-bold mb-4">Grid Layout</h1>
+<p class="text-lg text-white mb-6">
+  The CSS Grid Layout Module offers a grid-based layout system, with rows and columns,
+  making it easier to design web pages without having to use floats and positioning:
+</p>
+
+  <h1 class="text-2xl">Thread Configuration</h1>
+<div class="grid grid-rows-4 grid-cols-6 gap-4 bg-blue-500">
+  <div class="bg-white/80 text-center py-5 col-span-2 text-2xl grid grid-rows-3 grid-cols-3 gap-2 col-start-1">
+    <div class="bg-red-100 text-center py-5 col-span-3 text-xl"><h2 class="font-bold text-2xl text-[#002D74]">Vendors</h2></div>
+    <div class="bg-red-100 text-center py-5 text-xl"><button (click)="decrementVendors()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">-</button></div>
+    <div class="bg-red-100 text-center py-5 text-xl"><input
+      [(ngModel)]="numVendors"
+      class="p-2 rounded-xl border w-20 text-center"
+      type="text">
+    </div>
+    <div class="bg-red-100 text-center py-5 text-xl"><button (click)="incrementVendors()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">+</button></div>
+    <div class="bg-red-100 text-center py-5 col-start-2 text-xl">
+      <button (click)="saveVendors()" class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Save</button></div>
+  </div>
+  <div class="bg-white/80 text-center py-5 col-span-2">
+    <app-configuration-form/>
+  </div>
+  <div class="bg-white/80 text-center py-5 col-span-2 text-2xl grid grid-rows-3 grid-cols-3 gap-2">
+    <div class="bg-red-100 text-center py-5 col-span-3 text-xl"><h2 class="font-bold text-2xl text-[#002D74]">Customers</h2></div>
+    <div class="bg-red-100 text-center py-5 text-xl"><button (click)="decrementCustomers()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">-</button></div>
+    <div class="bg-red-100 text-center py-5 text-xl"><input
+      [(ngModel)]="numCustomers"
+      class="p-2 rounded-xl border w-20 text-center"
+      type="text">
+    </div>
+    <div class="bg-red-100 text-center py-5 text-xl"><button (click)="incrementCustomers()" class="bg-[#002D74] p-2 rounded-xl border w-20 text-center hover:scale-105 duration-300 text-white" name="sub">+</button></div>
+    <div class="bg-red-100 text-center py-5 col-start-2 text-xl">
+      <button (click)="saveCustomers()" class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Save</button></div>
+  </div>
+  <div class="bg-white/80 text-center py-5 col-span-6 ">
+    <span class="text-[#002D74] text-2xl font-bold">Progress</span>
+    <div class="flex mx-auto w-1/2">
+      Simulation
+      <div class="flex ml-auto mr-2 h-fit">
+        <button class="text-black bg-green-400 border border-white rounded p-1.5 mr-2 hover:scale-105 duration-300">Start</button>
+        <button routerLink="/login" class="text-white bg-red-500 border border-white rounded p-1.5 hover:scale-105 duration-300">Stop</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="-z-10 relative bg-cover bg-center bg-no-repeat bg-fixed h-screen" style="background-image: url('https://t4.ftcdn.net/jpg/09/68/13/75/360_F_968137535_O0ROMsUhBCIGWphShJtAHjJEDUnREvxr.jpg');">
+  <div class="absolute mt-28 w-full">
+    <h1 class="text-center text-5xl font-extrabold text-yellow-400">Sri Lanka Cricket</h1>
+  </div>
+
+</div>
+
+
+
+<p>configuration works!</p>
