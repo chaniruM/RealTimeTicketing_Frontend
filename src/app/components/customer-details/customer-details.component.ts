@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {CustomerService} from '../../services/customer.service';
 import {RouterLink} from '@angular/router';
+import {ApiService} from '../../services/api.service';
 
 @Component({
   selector: 'app-customer-details',
@@ -21,21 +21,21 @@ export class CustomerDetailsComponent {
 
   customers: Array<{ name: string; email: string; phone: string }> = [];
 
-  constructor(private customerService: CustomerService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.loadCustomers();
   }
 
   loadCustomers(): void {
-    this.customerService.getCustomers().subscribe((data) => {
+    this.apiService.getCustomers().subscribe((data) => {
       this.customers = data;
     });
   }
 
   addCustomer(): void {
     if (this.customer.name && this.customer.email && this.customer.phone) {
-      this.customerService.addCustomer(this.customer).subscribe(() => {
+      this.apiService.addCustomer(this.customer).subscribe(() => {
         this.loadCustomers(); // Reload customer list
         this.customer = { name: '', email: '', phone: '' }; // Clear the form
       });

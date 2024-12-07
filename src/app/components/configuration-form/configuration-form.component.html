@@ -102,6 +102,12 @@
         >
           Save Configuration
         </button>
+        <button
+          class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"
+          (click)="onLoadConfig()"
+        >
+          Use Previous Configuration
+        </button>
       </div>
     </form>
 
@@ -114,10 +120,10 @@
 <!--      class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"-->
 <!--    >-->
     <button
-      routerLink="/customerVendorConfig"
+      routerLink="/vendorDetails"
       class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"
     >
-      Set customer and vendor threads
+      Continue
     </button>
   </div>
 </div>

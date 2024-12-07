@@ -10,11 +10,7 @@ import {ApiService} from '../../services/api.service';
   templateUrl: './ticket-counter.component.html',
   styleUrl: './ticket-counter.component.scss'
 })
-// export class TicketCounterComponent {
-//   @Input() ticketCount: number = 0;
-//   @Input() ticketsToRelease: number = 0;
-//   @Input() ticketsSold: number = 0;
-// }
+
 export class TicketCounterComponent implements OnInit{
   ticketCount: number = 0;
   ticketsToRelease: number = 0;
@@ -24,7 +20,7 @@ export class TicketCounterComponent implements OnInit{
 
   ngOnInit(): void {
     this.fetchStatus();
-    setInterval(() => this.fetchStatus(), 2000); // Fetch status every 2 seconds
+    setInterval(() => this.fetchStatus(), 1000); // Fetch status every 2 seconds
   }
 
   fetchStatus() {

@@ -35,6 +35,24 @@ export class ApiService {
     return this.http.get(`${this.baseUrl}/ticket-pool/status`);
   }
 
+  addCustomer(customer: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/customers`, customer);
+  }
 
+  getCustomers(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/customers`);
+  }
+
+  addVendor(vendor: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/vendors`, vendor);
+  }
+
+  getVendors(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/vendors`);
+  }
+
+  getPreviousConfiguration(): Observable<any> {
+    return this.http.get<any[]>(`${this.baseUrl}/configuration`);
+  }
 
 }

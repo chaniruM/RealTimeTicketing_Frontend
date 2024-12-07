@@ -26,14 +26,6 @@ export class ConfigurationFormComponent {
   submitted = false;
   constructor(private apiService: ApiService) {}
 
-  // onSubmit() {
-  //   this.submitted = true;
-  //   if (this.isValidForm()) {
-  //     console.log('Configuration Saved:', this.config);
-  //   }
-  //   // Here, make an HTTP POST request to save the configuration to the backend
-  // }
-
   onSubmit() {
     this.submitted = true;
     if (this.isValidForm()) {
@@ -67,6 +59,21 @@ export class ConfigurationFormComponent {
       this.config.ticketReleaseRate !== null &&
       this.config.customerRetrievalRate !== null &&
       this.config.maxTicketCapacity !== null
+    );
+  }
+
+  onLoadConfig() {
+    this.apiService.getPreviousConfiguration().subscribe(
+      (config) => {
+        if (config) {
+          this.config = config;
+          console.log('Previous configuration loaded successfully:', config);
+          alert('Previous configuration loaded successfully!');
+        }
+      },
+      (error) => {
+        console.error('Error loading previous configuration:', error);
+      }
     );
   }
 }
