@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {ApiService} from '../../services/api.service';
 
@@ -11,12 +11,15 @@ import {ApiService} from '../../services/api.service';
   styleUrl: './ticket-counter.component.scss'
 })
 
+// export class TicketCounterComponent implements OnInit, OnDestroy{
 export class TicketCounterComponent implements OnInit{
   ticketCount: number = 0;
   ticketsToRelease: number = 0;
   ticketsSold: number = 0;
 
   constructor(private apiService: ApiService) {}
+  // constructor(private webSocketService: WebSocketService) {
+  // }
 
   ngOnInit(): void {
     this.fetchStatus();
@@ -47,13 +50,6 @@ export class TicketCounterComponent implements OnInit{
         console.error('Error starting simulation:', error);
         alert('Error starting simulation:');
       }
-
-      // () => {
-      //   alert('Simulation started successfully.');
-      // },
-      // (error) => {
-      //   console.error('Error starting simulation:', error);
-      // }
     );
   }
 
@@ -67,13 +63,6 @@ export class TicketCounterComponent implements OnInit{
         console.error('Error stopping simulation:', error);
         alert('Error stopping simulation:');
       }
-
-      // () => {
-      //   alert('Simulation stopped successfully.');
-      // },
-      // (error) => {
-      //   console.error('Error stopping simulation:', error);
-      // }
     );
   }
 
