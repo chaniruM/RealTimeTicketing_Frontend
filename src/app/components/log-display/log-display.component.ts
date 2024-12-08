@@ -12,30 +12,6 @@ import {NgForOf} from '@angular/common';
   templateUrl: './log-display.component.html',
   styleUrl: './log-display.component.scss'
 })
-// export class LogDisplayComponent implements Object, OnDestroy {
-//   logs: string[] = [];
-//   private logSocket!: WebSocketSubject<string>;
-//   private logSubscription!: Subscription;
-//
-//   ngOnInit(): void {
-//     this.logSocket = webSocket('ws://localhost:8085/logs');
-//     this.logSubscription = this.logSocket.subscribe({
-//       next: (message: string) => this.logs.unshift(message), // Add log at the beginning
-//       error: (err: any) => console.error('WebSocket error:', err),
-//       complete: () => console.log('WebSocket closed'),
-//     });
-//   }
-//
-//   ngOnDestroy(): void {
-//     if (this.logSubscription) {
-//       this.logSubscription.unsubscribe();
-//     }
-//     if (this.logSocket) {
-//       this.logSocket.complete();
-//     }
-//   }
-//
-// }
 
 export class LogDisplayComponent implements OnInit {
   // private logSocket!: WebSocketSubject<any>;
