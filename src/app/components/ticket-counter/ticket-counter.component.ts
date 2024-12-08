@@ -1,11 +1,12 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {ApiService} from '../../services/api.service';
+import {LogDisplayComponent} from '../log-display/log-display.component';
 
 @Component({
   selector: 'app-ticket-counter',
     imports: [
-        RouterLink
+        RouterLink, LogDisplayComponent
     ],
   templateUrl: './ticket-counter.component.html',
   styleUrl: './ticket-counter.component.scss'

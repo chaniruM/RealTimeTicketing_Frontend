@@ -1,10 +1,10 @@
-<div class="bg-white/80 text-center py-5 mx-5 rounded-xl mt-28">
-  <span class="text-[#002D74] text-5xl font-bold">Progress</span>
-  <div class="flex mx-auto w-1/2 text-4xl my-10">
-    Simulation
+<div class="bg-white/80 text-center py-5 mx-5 rounded-xl mt-28 text-[#002D74]">
+  <span class="text-5xl font-bold">Tickets</span>
+  <div class="flex mx-auto w-1/2  my-10">
+    <span class="text-4xl">Simulation</span>
     <div class="flex ml-auto mr-2 h-fit ">
-      <button (click)="startSimulation()" class="text-black bg-green-400 border border-white rounded p-1.5 mr-2 hover:scale-105 duration-300">Start</button>
-      <button (click)="stopSimulation()" class="text-white bg-red-500 border border-white rounded p-1.5 hover:scale-105 duration-300">Stop</button>
+      <button (click)="startSimulation()" class="text-2xl text-white bg-green-400 border border-white rounded-full p-1.5 mr-2 hover:scale-105 duration-300 px-5">Start</button>
+      <button (click)="stopSimulation()" class="text-2xl text-white bg-red-500 border border-white rounded-full p-1.5 hover:scale-105 duration-300 px-5">Stop</button>
     </div>
 
   </div>
@@ -22,6 +22,7 @@
       <p>{{ ticketsSold }}</p>
     </div>
   </div>
+  <app-log-display/>
   <div class="mx-auto w-fit flex justify-between mt-20 gap-3">
 <!--    <button routerLink="/vendorDetails" class="ml-10 px-2 w-fit mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Go back</button>-->
     <button routerLink="/customerDetails" class="ml-10 px-2 w-fit mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Go back</button>

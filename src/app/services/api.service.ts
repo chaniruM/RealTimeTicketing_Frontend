@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:8085/api';
+  private baseUrl = 'http://localhost:8083/api';
 
   constructor(private http: HttpClient) { }
 
@@ -53,6 +53,10 @@ export class ApiService {
 
   getPreviousConfiguration(): Observable<any> {
     return this.http.get<any[]>(`${this.baseUrl}/configuration`);
+  }
+
+  deleteCustomer(customerId: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/customers/${customerId}`);
   }
 
 }

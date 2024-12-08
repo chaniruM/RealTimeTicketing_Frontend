@@ -9,10 +9,11 @@ import {ConfigurationFormComponent} from './components/configuration-form/config
 import {CustomerVendorConfigComponent} from './components/customer-vendor-config/customer-vendor-config.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CustomerDetailsComponent} from './components/customer-details/customer-details.component';
+import {LogDisplayComponent} from './components/log-display/log-display.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, MatIconModule, ConfigurationComponent, TestComponent, ConfigurationFormComponent, CustomerVendorConfigComponent, HttpClientModule , CustomerDetailsComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, MatIconModule, ConfigurationComponent, TestComponent, ConfigurationFormComponent, CustomerVendorConfigComponent, HttpClientModule , CustomerDetailsComponent, LogDisplayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

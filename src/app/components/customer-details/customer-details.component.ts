@@ -41,4 +41,12 @@ export class CustomerDetailsComponent {
       });
     }
   }
+
+  deleteCustomer(customerId: string): void {
+    if (confirm('Are you sure you want to delete this customer?')) {
+      this.apiService.deleteCustomer(customerId).subscribe(() => {
+        this.loadCustomers(); // Reload customer list after deletion
+      });
+    }
+  }
 }
