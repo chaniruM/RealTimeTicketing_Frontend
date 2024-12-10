@@ -1,9 +1,5 @@
-<!--<div class=" w-full p-5 items-center">-->
-<!--<div class="w-full h-24"></div>-->
 <div class=" w-full p-5 items-center bg-gray-100 bg-opacity-75 flex rounded-2xl max-w-3xl justify-center mx-auto mt-10">
 
-  <!-- form -->
-<!--  <div class="px-2 text-[#002D74]">-->
   <div class="px-8 md:px-16 text-[#002D74]">
     <h2 class="font-bold text-2xl">Configuration</h2>
     <p class="text-xs mt-4 mb-4">Set up multithreading configuration</p>
@@ -20,14 +16,21 @@
             type="number"
             name="totalTickets"
             placeholder="0"
+            min="1"
             [(ngModel)]="config.totalTickets"
             required
             #totalTickets="ngModel"
           />
 
         </div>
-        <div *ngIf="(totalTickets.touched || submitted) && !config.totalTickets" class="error text-red-600 text-sm mt-2">
-          This field is required.
+
+        <div class="error text-red-600 text-sm mt-2">
+          <div *ngIf="submitted && totalTickets.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="submitted && totalTickets.errors?.['min']">
+            Value must be greater than zero.
+          </div>
         </div>
       </div>
 
@@ -41,14 +44,21 @@
             type="number"
             name="ticketReleaseRate"
             placeholder="0"
+            min="1"
             [(ngModel)]="config.ticketReleaseRate"
             required
             #ticketReleaseRate="ngModel"
           />
 
         </div>
-        <div *ngIf="(ticketReleaseRate.touched || submitted) && !config.ticketReleaseRate" class="error text-red-600 text-sm mt-2">
-          This field is required.
+
+        <div class="error text-red-600 text-sm mt-2">
+          <div *ngIf="submitted && ticketReleaseRate.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="submitted && ticketReleaseRate.errors?.['min']">
+            Value must be greater than zero.
+          </div>
         </div>
       </div>
 
@@ -62,14 +72,21 @@
             type="number"
             name="customerRetrievalRate"
             placeholder="0"
+            min="1"
             [(ngModel)]="config.customerRetrievalRate"
             required
             #customerRetrievalRate="ngModel"
           />
 
         </div>
-        <div *ngIf="(customerRetrievalRate.touched || submitted) && !config.customerRetrievalRate" class="error text-red-600 text-sm mt-2">
-          This field is required.
+
+        <div class="error text-red-600 text-sm mt-2">
+          <div *ngIf="submitted && customerRetrievalRate.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="submitted && customerRetrievalRate.errors?.['min']">
+            Value must be greater than zero.
+          </div>
         </div>
       </div>
 
@@ -83,14 +100,21 @@
             type="number"
             name="maxTicketCapacity"
             placeholder="0"
+            min="1"
             [(ngModel)]="config.maxTicketCapacity"
             required
             #maxTicketCapacity="ngModel"
           />
 
         </div>
-        <div *ngIf="(maxTicketCapacity.touched || submitted) && !config.maxTicketCapacity" class="error text-red-600 text-sm mt-2">
-          This field is required.
+
+        <div class="error text-red-600 text-sm mt-2">
+          <div *ngIf="submitted && maxTicketCapacity.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="submitted && maxTicketCapacity.errors?.['min']">
+            Value must be greater than zero.
+          </div>
         </div>
       </div>
 
@@ -115,10 +139,6 @@
       <button routerLink="/" class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300">Go back</button>
       <button class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300" (click)="resetForm()">Reset</button>
     </div>
-<!--    <button-->
-<!--      routerLink="/customerDetails"-->
-<!--      class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"-->
-<!--    >-->
     <button
       routerLink="/vendorDetails"
       class="w-full mt-4 text-base bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"

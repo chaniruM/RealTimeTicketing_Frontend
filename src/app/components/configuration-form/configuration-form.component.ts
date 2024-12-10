@@ -41,6 +41,8 @@ export class ConfigurationFormComponent {
           alert('Error saving configuration');
         }
       );
+    } else {
+      alert('Error saving configuration');
     }
   }
 
@@ -55,10 +57,10 @@ export class ConfigurationFormComponent {
   isValidForm(): boolean {
     // Ensure all fields are non-null
     return (
-      this.config.totalTickets !== null &&
-      this.config.ticketReleaseRate !== null &&
-      this.config.customerRetrievalRate !== null &&
-      this.config.maxTicketCapacity !== null
+      this.config.totalTickets !== null && this.config.totalTickets > 0 &&
+      this.config.ticketReleaseRate !== null && this.config.ticketReleaseRate > 0 &&
+      this.config.customerRetrievalRate !== null && this.config.customerRetrievalRate > 0 &&
+      this.config.maxTicketCapacity !== null && this.config.maxTicketCapacity > 0
     );
   }
 
