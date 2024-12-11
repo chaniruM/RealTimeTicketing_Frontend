@@ -57,7 +57,7 @@ export class TicketCounterComponent implements OnInit{
   stopSimulation() {
     this.apiService.stopSimulation().subscribe(
       (response) => {
-        console.log('SSimulation stopped successfully:', response);
+        console.log('Simulation stopped successfully:', response);
         alert(response.message); // Display the message from the backend
       },
       (error) => {
