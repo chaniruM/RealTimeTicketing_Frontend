@@ -8,8 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, HeaderComponent, FooterComponent, MatIconModule, HttpClientModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'ticketingApp';

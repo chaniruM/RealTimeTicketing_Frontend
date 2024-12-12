@@ -8,8 +8,7 @@ import {RouterLink} from '@angular/router';
     MatIconModule,
     RouterLink
   ],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  templateUrl: './footer.component.html'
 })
 export class FooterComponent {
 

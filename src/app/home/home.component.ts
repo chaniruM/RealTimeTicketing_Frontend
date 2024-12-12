@@ -9,8 +9,7 @@ import {RouterLink} from '@angular/router';
     ReactiveFormsModule,
     RouterLink
   ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './home.component.html'
 })
 export class HomeComponent {
 

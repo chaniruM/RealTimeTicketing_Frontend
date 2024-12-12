@@ -17,9 +17,9 @@ export const routes: Routes = [
   },
 
   {
-    path: 'ticketCounter',
-    loadComponent: () => {
-      return import("./components/ticket-counter/ticket-counter.component").then(m => m.TicketCounterComponent);
+    path: 'controlPanel',
+    loadComponent: ()=>{
+      return import("./components/control-panel/control-panel.component").then(m => m.ControlPanelComponent);
     }
   },
 
